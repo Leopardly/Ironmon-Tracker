@@ -176,6 +176,7 @@ Constants.OrderedLists = {
 		"Display pedometer",
 		"Display play time",
 		"Display gender",
+		"Use Pixel Font",
 		"Game timer location",
 		"Dev branch updates",
 		"Welcome message",

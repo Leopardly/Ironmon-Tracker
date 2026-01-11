@@ -139,6 +139,7 @@ FileManager.LuaCode = {
 	{ name = "Tracker", filepath = "Tracker.lua", },
 	{ name = "MGBA", filepath = "MGBA.lua", },
 	{ name = "AnimationManager", filepath = "AnimationManager.lua", },
+	{ name = "PixelFont", filepath = "PixelFont.lua"},
 	-- Network files
 	{ name = "Network", filepath = FileManager.Folders.Network .. FileManager.slash .. "Network.lua", },
 	{ name = "EventHandler", filepath = FileManager.Folders.Network .. FileManager.slash .. "EventHandler.lua", },

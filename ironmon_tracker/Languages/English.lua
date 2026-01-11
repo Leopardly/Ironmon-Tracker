@@ -255,6 +255,7 @@ ScreenResources{
 		OptionDisplayPedometer = "Display step pedometer",
 		OptionDisplayPlayTime = "Display play time",
 		OptionDisplayGender = "Display Pokémon's gender",
+		OptionUsePixelFont = "Use Pixel Font",
 		OptionAnimatedPokemonPopout = "Animated Pokémon popout",
 		ButtonEstimatePokemonIVs = "Estimate Pokémon IV Potential",
 		EstimateResultOutstanding = "Outstanding!!!",

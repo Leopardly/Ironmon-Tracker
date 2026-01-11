@@ -51,6 +51,7 @@ Options = {
 	["Open Book Play Mode"] = false,
 	["Allow sprites to walk"] = true,
 	["Active Profile"] = "",
+	["Use Pixel Font"] = true, -- set to true while testing, probs should be false default
 
 	["GachaMon Ratings Ruleset"] = "AutoDetect",
 	["Add GachaMon to collection if its new"] = false,

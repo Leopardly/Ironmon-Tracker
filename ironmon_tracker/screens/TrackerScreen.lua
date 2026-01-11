@@ -1399,9 +1399,20 @@ function TrackerScreen.drawStatsArea(data)
 			langOffset = 3
 		end
 
+		--Some custom working out for the nature symbol, check spacing
+		if Options["Use Pixel Font"] then
+			if statKey == data.p.positivestat then
+				Drawing.drawImageAsPixels({{0,1,0},{1,1,1},{0,1,0}},statOffsetX + 16 + langOffset, statOffsetY - 1, textColor, nil)
+			elseif statKey == data.p.negativestat then
+				Drawing.drawImageAsPixels({{0,0,0},{0,1,1}},statOffsetX + 16 + langOffset, statOffsetY - 1, textColor, nil)
+			end
+		else
+			Drawing.drawText(statOffsetX + 16 + langOffset, statOffsetY - 1, natureSymbol, textColor, nil, 5, Constants.Font.FAMILY)
+		end
+
 		-- Draw stat label and nature symbol next to it
 		Drawing.drawText(statOffsetX, statOffsetY, statLabels[statKey:upper()], textColor, shadowcolor)
-		Drawing.drawText(statOffsetX + 16 + langOffset, statOffsetY - 1, natureSymbol, textColor, nil, 5, Constants.Font.FAMILY)
+		--Drawing.drawText(statOffsetX + 16 + langOffset, statOffsetY - 1, natureSymbol, textColor, nil, 5, Constants.Font.FAMILY)
 
 		-- Draw stat battle increases/decreases, stages range from -6 to +6
 		if Battle.inActiveBattle() then

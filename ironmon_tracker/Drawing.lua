@@ -196,6 +196,14 @@ function Drawing.drawStatusIcon(status, x, y)
 	end
 end
 
+function Drawing.drawPixelText(x,y,text,color)
+	local xoffset = 0
+	for c in tostring(text):gmatch(utf8.charpattern) do
+		Drawing.drawImageAsPixels(PixelFont.Char[c],x+xoffset+1,y+1,color,nil)
+		xoffset = xoffset + Constants.charWidth(c) + 1
+	end
+end
+
 function Drawing.drawText(x, y, text, color, shadowcolor, size, family, style)
 	if Utils.isNilOrEmpty(text) then return end
 
@@ -203,6 +211,12 @@ function Drawing.drawText(x, y, text, color, shadowcolor, size, family, style)
 	if Main.OS == "Linux" then
 		x = x + 1
 		y = y - 1
+	end
+
+	if Options["Use Pixel Font"] then
+		-- work out spacing here (maybe linux font offset related?)
+		Drawing.drawPixelText(x,y+2,text,color) 
+		return
 	end
 
 	-- Need a bit more space when drawing larger characters
